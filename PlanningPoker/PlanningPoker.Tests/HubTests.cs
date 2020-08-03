@@ -85,7 +85,6 @@ namespace PlanningPoker.Tests
       this.hubService.Setup(service => service.UpdateUserList(It.IsAny<IEnumerable<User>>())).Verifiable();
       var owner = this.userService.Add("Owner", "ConnectionId");
       var room = this.roomService.Add("Room", owner, new Deck("Deck"));
-      await this.roomService.UserJoin(owner.Id, room.Id);
       var user = this.userService.Add("User", "ConnectionId2");
       await this.roomService.UserJoin(user.Id, room.Id);
       this.hubService.VerifyAll();
@@ -98,10 +97,7 @@ namespace PlanningPoker.Tests
     [Test]
     public async Task RoundStart()
     {
-      this.hubService.Setup(service => service.RoundStart(
-        It.IsAny<IEnumerable<User>>(),
-        It.IsAny<Round>())).Verifiable();
-
+      this.hubService.Setup(service => service.RoundStart(It.IsAny<IEnumerable<User>>(), It.IsAny<Round>())).Verifiable();
       var owner = this.userService.Add("Owner", "ConnectionId");
       var room = this.roomService.Add("Room", owner, new Deck("Deck"));
       await this.roomService.UserJoin(owner.Id, room.Id);
@@ -116,8 +112,7 @@ namespace PlanningPoker.Tests
     [Test]
     public async Task RoundStop()
     {
-      this.hubService.Setup(service => service.RoundStop(
-        It.IsAny<IEnumerable<User>>(), It.IsAny<Round>())).Verifiable();
+      this.hubService.Setup(service => service.RoundStop(It.IsAny<IEnumerable<User>>(), It.IsAny<Round>())).Verifiable();
       var owner = this.userService.Add("Owner", "ConnectionID");
       var room = this.roomService.Add("Room", owner, new Deck("Deck"));
       await this.roomService.UserJoin(owner.Id, room.Id);

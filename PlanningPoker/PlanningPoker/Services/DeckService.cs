@@ -1,7 +1,7 @@
-﻿using PlanningPoker.Data.Models;
-using PlanningPoker.Data.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using PlanningPoker.Data.Models;
+using PlanningPoker.Data.Repositories;
 
 namespace PlanningPoker.Services
 {

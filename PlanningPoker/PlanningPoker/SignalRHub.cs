@@ -50,14 +50,16 @@ namespace PlanningPoker
     {
       await this.hubService.UpdateRoomList(roomService.GetAll());
     }
+
     /// <summary>
     /// Обновление списка пользователей
     /// </summary>
-    /// <returns>без возвращаемого значения</returns>
+    /// <returns>без возвращаемого значения </returns>
     public async Task UpdateUserList()
     {
       await this.hubService.UpdateUserList(userService.GetAll());
     }
+
     /// <summary>
     /// Обновить список колод
     /// </summary>
