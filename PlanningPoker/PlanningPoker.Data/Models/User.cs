@@ -3,15 +3,15 @@
 namespace PlanningPoker.Data.Models
 {
   /// <summary>
-  /// Класс описываюзий пользователя
+  /// Класс описывающий пользователя
   /// </summary>
   public class User : IEntity
   {
     /// <summary>
     /// Конструктор класса пользователя
     /// </summary>
-    /// <param name="name">Имя пользователя</param>
-    /// <param name="connectionId">Идентификатор подключения SignalR хаба</param>
+    /// <param name="name"> Имя пользователя </param>
+    /// <param name="connectionId"> Идентификатор подключения SignalR хаба </param>
     public User(string name, string connectionId)
     {
       this.Id = Guid.NewGuid();

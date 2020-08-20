@@ -12,10 +12,10 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="id">Идентификатор раунда</param>
-    /// <param name="theme">Тема раунда</param>
-    /// <param name="votes">Список голосов</param>
-    /// <param name="averageValue">Среднее значение голосов</param>
+    /// <param name="id"> Идентификатор раунда </param>
+    /// <param name="theme"> Тема раунда </param>
+    /// <param name="votes"> Список голосов </param>
+    /// <param name="averageValue"> Среднее значение голосов </param>
     public RoundStopInfo(Guid id, string theme, IEnumerable<Vote> votes, double? averageValue)
     {
       this.Id = id;

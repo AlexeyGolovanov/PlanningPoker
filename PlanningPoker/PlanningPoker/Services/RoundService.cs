@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Timers;
-using PlanningPoker.Data.DTOs;
 using PlanningPoker.Data.Models;
 using PlanningPoker.Data.Repositories;
 
@@ -48,13 +47,14 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса работы с раундами
     /// </summary>
-    /// <param name="hub">Сервис работы с хабом SignalR</param>
-    /// <param name="timerService">Сервис работы с таймером</param>
-    /// <param name="rooms">Репозиторий комнат</param>
-    /// <param name="rounds">Репозиторий раундов</param>
-    /// <param name="users">Репозиторий пользователей</param>
-    /// <param name="decks">Репозиторий колод</param>
-    public RoundService(ISignalRHubService hub, TimerService timerService, IRepository<Room> rooms, IRepository<Round> rounds, IRepository<User> users, IRepository<Deck> decks)
+    /// <param name="hub"> Сервис работы с хабом SignalR </param>
+    /// <param name="timerService"> Сервис работы с таймером </param>
+    /// <param name="rooms"> Репозиторий комнат </param>
+    /// <param name="rounds"> Репозиторий раундов </param>
+    /// <param name="users"> Репозиторий пользователей </param>
+    /// <param name="decks"> Репозиторий колод </param>
+    public RoundService(ISignalRHubService hub, TimerService timerService, IRepository<Room> rooms, IRepository<Round> rounds, 
+      IRepository<User> users, IRepository<Deck> decks)
     {
       this.hub = hub;
       this.timerService = timerService;
@@ -67,10 +67,10 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Создание нового раунда
     /// </summary>
-    /// <param name="theme">Тема раунда</param>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <param name="time">Время обсуждения</param>
-    /// <param name="deckId">Идентификатор колоды</param>
+    /// <param name="theme"> Тема раунда </param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <param name="time"> Время обсуждения </param>
+    /// <param name="deckId"> Идентификатор колоды </param>
     /// <returns></returns>
     public async Task<Round> Add(string theme, Guid roomId, TimeSpan? time = null, Guid? deckId = null)
     {
@@ -110,8 +110,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение раунда
     /// </summary>
-    /// <param name="id">Идентификатор раунда</param>
-    /// <returns>Найденный раунд</returns>
+    /// <param name="id"> Идентификатор раунда </param>
+    /// <returns> Найденный раунд </returns>
     public Round Get(Guid id)
     {
       return this.rounds.Get(id);
@@ -120,7 +120,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение списка всех раундов
     /// </summary>
-    /// <returns>Список всех раундов</returns>
+    /// <returns> Список всех раундов </returns>
     public IEnumerable<Round> GetAll()
     {
       return this.rounds.GetAll();
@@ -129,8 +129,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Завршение раунда
     /// </summary>
-    /// <param name="roomId"></param>
-    /// <returns></returns>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <returns> Активный в настоящий момент раунд в указанной комнате </returns>
     public async Task<Round> Stop(Guid roomId)
     {
       var room = this.rooms.Get(roomId);
@@ -151,7 +151,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Удаление раунда
     /// </summary>
-    /// <param name="roundId">Идентификатор раунда</param>
+    /// <param name="roundId"> Идентификатор раунда </param>
     public void Remove(Guid roundId)
     {
       this.rounds.Remove(roundId);
@@ -160,10 +160,10 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Выбор карты пользователем
     /// </summary>
-    /// <param name="roundId">Идентификатор раунда</param>
-    /// <param name="userId">Идентификатор пользователя</param>
-    /// <param name="card">Выьранная карта</param>
-    /// <returns>Документируемый объект голоса</returns>
+    /// <param name="roundId"> Идентификатор раунда </param>
+    /// <param name="userId"> Идентификатор пользователя </param>
+    /// <param name="card"> Выбранная карта </param>
+    /// <returns> Документируемый объект голоса </returns>
     public Vote Vote(Guid roundId, Guid userId, Card card)
     {
       var round = this.rounds.Get(roundId);
@@ -184,8 +184,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Переигровка раунда
     /// </summary>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <returns>Пересозданный раунд</returns>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <returns> Пересозданный раунд </returns>
     public async Task<Round> Restart(Guid roomId)
     {
       var room = this.rooms.Get(roomId);

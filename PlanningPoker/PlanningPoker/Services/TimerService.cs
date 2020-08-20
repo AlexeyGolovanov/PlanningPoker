@@ -18,10 +18,10 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Запуск таймера
     /// </summary>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <param name="roundId">Идентификатор раунда</param>
-    /// <param name="timer">Экземпляр таймера</param>
-    /// <returns>Объект с информацией для таймера</returns>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <param name="roundId"> Идентификатор раунда </param>
+    /// <param name="timer"> Экземпляр таймера </param>
+    /// <returns> Объект с информацией для таймера </returns>
     public RoundTimerInfo Start(Guid roomId, Guid roundId, Timer timer)
     {
       if (this.timers.TryAdd(roundId, new RoundTimerInfo(roomId, timer)))
@@ -35,8 +35,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Остановка таймера
     /// </summary>
-    /// <param name="roundId">Идентификатор раунда</param>
-    /// <returns>Был ли остановлен таймер</returns>
+    /// <param name="roundId"> Идентификатор раунда </param>
+    /// <returns> Был ли остановлен таймер </returns>
     public bool Stop(Guid roundId)
     {
       if (this.timers.TryRemove(roundId, out var value))

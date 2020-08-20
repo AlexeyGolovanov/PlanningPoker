@@ -12,7 +12,7 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Конструктор объекта раунда
     /// </summary>
-    /// <param name="theme">Тема раунда</param>
+    /// <param name="theme"> Тема раунда </param>
     public Round(string theme)
     {
       this.Id = Guid.NewGuid();
@@ -63,14 +63,14 @@ namespace PlanningPoker.Data.Models
     public double? AverageValue => this.GetAverage();
 
     /// <summary>
-    /// Идет раунд или заверешен
+    /// Активен или заверешен раунд
     /// </summary>
     public bool IsActive { get; set; }
 
     /// <summary>
-    /// метод подсчета среднего значения голоса
+    /// Метод подсчета среднего значения голоса
     /// </summary>
-    /// <returns>Среднее значение голоса</returns>
+    /// <returns> Среднее значение голоса </returns>
     private double? GetAverage()
     {
       var nonNullCardValues = this.Votes.Select(vote => vote.Card?.Value != null).OfType<Vote>().ToList();

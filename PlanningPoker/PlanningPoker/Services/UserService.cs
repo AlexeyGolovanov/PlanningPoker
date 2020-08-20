@@ -18,7 +18,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса работы с пользователями
     /// </summary>
-    /// <param name="users">Репозиторий пользователей</param>
+    /// <param name="users"> Репозиторий пользователей </param>
     public UserService(IRepository<User> users)
     {
       this.users = users;
@@ -27,9 +27,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Добавоение нового пользователя
     /// </summary>
-    /// <param name="name">Имя пользователя</param>
-    /// <param name="connectionId">Идентификатор подключения SignalR</param>
-    /// <returns>Экземпляр созданного пользователя</returns>
+    /// <param name="name"> Имя пользователя </param>
+    /// <param name="connectionId"> Идентификатор подключения SignalR </param>
+    /// <returns> Экземпляр созданного пользователя </returns>
     public User Add(string name, string connectionId)
     {
       var user = new User(name, connectionId);
@@ -41,7 +41,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Удаление пользователя
     /// </summary>
-    /// <param name="id">Идентификатор пользователя</param>
+    /// <param name="id"> Идентификатор пользователя </param>
     public void Remove(Guid id)
     { 
       this.users.Remove(id);
@@ -50,8 +50,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение пользователя
     /// </summary>
-    /// <param name="id">Идентификатор пользователя</param>
-    /// <returns>Найденный пользователь</returns>
+    /// <param name="id"> Идентификатор пользователя </param>
+    /// <returns> Найденный пользователь </returns>
     public User Get(Guid id)
     {
       var user = this.users.Get(id);
@@ -61,7 +61,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение списка всех пользователей
     /// </summary>
-    /// <returns>Список всех пользователей</returns>
+    /// <returns> Список всех пользователей </returns>
     public IEnumerable<User> GetAll()
     {
       return this.users.GetAll();
@@ -70,9 +70,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Переподключение пользователя к комнате
     /// </summary>
-    /// <param name="userId">Идентификатор пользователя</param>
-    /// <param name="connectionId">Идентификатор подключения SignalR</param>
-    /// <returns>Экземпляр переподключенного пользователя</returns>
+    /// <param name="userId"> Идентификатор пользователя </param>
+    /// <param name="connectionId"> Идентификатор подключения SignalR </param>
+    /// <returns> Экземпляр переподключенного пользователя </returns>
     public User Reconnect(Guid userId, string connectionId)
     {
       var user = this.users.Get(userId);

@@ -23,7 +23,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Конструктор контроллера пользователей
     /// </summary>
-    /// <param name="userService">Сервис работы с пользователями</param>
+    /// <param name="userService"> Сервис работы с пользователями </param>
     public UserController(UserService userService)
     {
       this.userService = userService;
@@ -32,8 +32,8 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Создание нового пользователя
     /// </summary>
-    /// <param name="values">Объект с данными для создания пользователя</param>
-    /// <returns>Созданный объект пользователя</returns>
+    /// <param name="values"> Объект с данными для создания пользователя </param>
+    /// <returns> Созданный объект пользователя </returns>
     [HttpPost("createUser")]
     public User CreateUser(UserCreation values)
     {
@@ -51,8 +51,8 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Получение пользователя
     /// </summary>
-    /// <param name="id">Идентификатор пользователя</param>
-    /// <returns>Найденный пользователь</returns>
+    /// <param name="id"> Идентификатор пользователя </param>
+    /// <returns> Найденный пользователь </returns>
     [HttpGet("get/{id}")]
     public User GetUser(string id)
     {
@@ -62,8 +62,8 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Получение пользователя
     /// </summary>
-    /// <param name="id">Идентификатор пользователя</param>
-    /// <returns>Найденный пользователь</returns>
+    /// <param name="id"> Идентификатор пользователя </param>
+    /// <returns> Найденный пользователь </returns>
     [HttpGet("get/{id}")]
     public User GetUser(Guid id)
     {
@@ -73,7 +73,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// получение списка всех пользователей
     /// </summary>
-    /// <returns>Список всех пользователей</returns>
+    /// <returns> Список всех пользователей </returns>
     [HttpGet("getAll")]
     public IEnumerable<User> GetAll()
     {

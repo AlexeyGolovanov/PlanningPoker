@@ -3,7 +3,7 @@
 namespace PlanningPoker.Data.Repositories
 {
   /// <summary>
-  /// Класс хранилиха колод
+  /// Класс хранилища колод
   /// </summary>
   public class DeckRepository : BaseRepository<Deck>
   {

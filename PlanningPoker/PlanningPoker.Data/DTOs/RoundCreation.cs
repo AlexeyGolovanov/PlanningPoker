@@ -10,10 +10,10 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <param name="theme">Тема раунда</param>
-    /// <param name="plannedDuration">Ожидаемая длительность в милисекундах</param>
-    /// <param name="deckId">Идентификатор колоды</param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <param name="theme"> Тема раунда </param>
+    /// <param name="plannedDuration"> Ожидаемая длительность в милисекундах </param>
+    /// <param name="deckId"> Идентификатор колоды </param>
     public RoundCreation(Guid roomId, string theme, int? plannedDuration, Guid? deckId = null)
     {
       this.RoomId = roomId;

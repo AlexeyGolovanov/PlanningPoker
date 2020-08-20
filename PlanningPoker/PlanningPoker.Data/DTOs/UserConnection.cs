@@ -10,8 +10,8 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="userId">Идентификатор пользователя</param>
-    /// <param name="roomId">Идентификатор комнаты</param>
+    /// <param name="userId"> Идентификатор пользователя </param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
     public UserConnection(Guid userId, Guid roomId)
     {
       this.UserId = userId;

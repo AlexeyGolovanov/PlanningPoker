@@ -11,9 +11,9 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Конструктор объекта комнаты
     /// </summary>
-    /// <param name="name">Название комнаты</param>
-    /// <param name="owner">Владелец комнаты</param>
-    /// <param name="defaultDeck">Использумая колода</param>
+    /// <param name="name"> Название комнаты </param>
+    /// <param name="owner"> Владелец комнаты </param>
+    /// <param name="defaultDeck"> Использумая колода </param>
     public Room(string name, User owner, Deck defaultDeck)
     {
       this.Id = Guid.NewGuid();
@@ -25,19 +25,19 @@ namespace PlanningPoker.Data.Models
     }
 
     /// <summary>
-    /// Идентификатор Комнаты
+    /// Идентификатор комнаты
     /// </summary>
     public Guid Id { get; }
 
     /// <summary>
     /// Название комнаты
     /// </summary>
-    public string Name { get;}
+    public string Name { get; }
 
     /// <summary>
     /// Владелец комнаты
     /// </summary>
-    public User Owner { get;}
+    public User Owner { get; }
 
     /// <summary>
     /// Список пользователей в комнате

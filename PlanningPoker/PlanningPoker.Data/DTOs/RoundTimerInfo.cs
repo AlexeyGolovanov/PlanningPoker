@@ -11,8 +11,8 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <param name="timer">Объект таймера</param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <param name="timer"> Объект таймера </param>
     public RoundTimerInfo(Guid roomId, Timer timer)
     {
       this.RoomId = roomId;

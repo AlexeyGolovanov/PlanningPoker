@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
@@ -7,7 +8,6 @@ using Microsoft.Extensions.Hosting;
 using PlanningPoker.Data.Models;
 using PlanningPoker.Data.Repositories;
 using PlanningPoker.Services;
-using System.Linq;
 
 namespace PlanningPoker
 {
@@ -24,10 +24,9 @@ namespace PlanningPoker
     public IConfiguration Configuration { get; }
 
     /// <summary>
-    /// 
     /// Добавление сервисов в контейнер.
     /// </summary>
-    /// <param name="services">Коллекция сервисов <see cref="IServiceCollection"/>.</param>
+    /// <param name="services"> Коллекция сервисов <see cref="IServiceCollection"/>.</param>
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();

@@ -9,8 +9,8 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="user">Голосовавший пользователь</param>
-    /// <param name="card">Выбранная карта</param>
+    /// <param name="user"> Голосовавший пользователь </param>
+    /// <param name="card"> Выбранная карта </param>
     public Vote(User user, Card? card)
     {
       this.User = user;

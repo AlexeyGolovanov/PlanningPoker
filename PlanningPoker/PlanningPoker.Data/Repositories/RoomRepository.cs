@@ -3,7 +3,7 @@
 namespace PlanningPoker.Data.Repositories
 {
   /// <summary>
-  /// Класс хранилиза комнат
+  /// Класс хранилища комнат
   /// </summary>
   public class RoomRepository : BaseRepository<Room>
   {

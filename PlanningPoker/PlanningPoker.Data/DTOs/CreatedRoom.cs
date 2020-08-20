@@ -8,10 +8,10 @@ namespace PlanningPoker.Data.DTOs
   public class CreatedRoom
   {
     /// <summary>
-    /// конструктор класса 
+    /// Конструктор класса 
     /// </summary>
-    /// <param name="id">Идентификатор комнаты</param>
-    /// <param name="name">Название комнаты</param>
+    /// <param name="id"> Идентификатор комнаты </param>
+    /// <param name="name"> Название комнаты </param>
     public CreatedRoom(Guid id, string name)
     {
       this.Id = id;

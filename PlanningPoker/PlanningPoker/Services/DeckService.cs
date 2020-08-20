@@ -18,7 +18,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса работы с колодами
     /// </summary>
-    /// <param name="decks">Репозиторий колод</param>
+    /// <param name="decks"> Репозиторий колод </param>
     public DeckService(IRepository<Deck> decks)
     {
       this.decks = decks;
@@ -27,8 +27,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Добавление новой колоды
     /// </summary>
-    /// <param name="name">Название колоды</param>
-    /// <returns>Созданная колода</returns>
+    /// <param name="name"> Название колоды </param>
+    /// <returns> Созданная колода </returns>
     public Deck Add(string name)
     {
       var deck = new Deck(name); 
@@ -39,7 +39,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Удаление колоды
     /// </summary>
-    /// <param name="id">Идентификатор колоды</param>
+    /// <param name="id"> Идентификатор колоды </param>
     public void Remove(Guid id)
     {
       this.decks.Remove(id);
@@ -48,8 +48,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение колоды из имеющихся
     /// </summary>
-    /// <param name="id">Идентификатор колоды</param>
-    /// <returns>Найденная колода</returns>
+    /// <param name="id"> Идентификатор колоды </param>
+    /// <returns> Найденная колода </returns>
     public Deck Get(Guid id)
     {
       return this.decks.Get(id);
@@ -58,7 +58,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получения списка всех колод
     /// </summary>
-    /// <returns>Список всех колод</returns>
+    /// <returns> Список всех колод </returns>
     public IEnumerable<Deck> GetAll()
     {
       return this.decks.GetAll();
@@ -67,8 +67,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Добавление карты в колоду
     /// </summary>
-    /// <param name="deckId">Идентификатор колоды</param>
-    /// <param name="card">Карта для добавления</param>
+    /// <param name="deckId"> Идентификатор колоды </param>
+    /// <param name="card"> Карта для добавления </param>
     public void AddCard(Guid deckId, Card card)
     {
       var deck = this.decks.Get(deckId);

@@ -18,7 +18,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса работы с картами
     /// </summary>
-    /// <param name="cards">Репозиторий карт</param>
+    /// <param name="cards"> Репозиторий карт </param>
     public CardService(IRepository<Card> cards)
     {
       this.cards = cards;
@@ -27,9 +27,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Добавление новой карты
     /// </summary>
-    /// <param name="text">Текст карты</param>
-    /// <param name="value">Численное значение карты</param>
-    /// <returns>Созданная карта</returns>
+    /// <param name="text"> Текст карты </param>
+    /// <param name="value"> Численное значение карты </param>
+    /// <returns> Созданная карта </returns>
     public Card Add(string text, double? value)
     {
       var card = new Card(text, value);
@@ -40,7 +40,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Удаление карты
     /// </summary>
-    /// <param name="id">Идентификатор карты</param>
+    /// <param name="id"> Идентификатор карты </param>
     public void Remove(Guid id)
     {
       this.cards.Remove(id);
@@ -49,8 +49,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение карты
     /// </summary>
-    /// <param name="id">Идентификатор карты</param>
-    /// <returns>Найденная карта</returns>
+    /// <param name="id"> Идентификатор карты </param>
+    /// <returns> Найденная карта </returns>
     public Card Get(Guid id)
     {
       return this.cards.Get(id);
@@ -59,7 +59,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение списка всех карт
     /// </summary>
-    /// <returns>Список всех карт</returns>
+    /// <returns> Список всех карт </returns>
     public IEnumerable<Card> GetAll()
     {
       return this.cards.GetAll();

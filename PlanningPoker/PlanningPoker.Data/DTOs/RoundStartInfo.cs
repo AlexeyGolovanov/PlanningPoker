@@ -10,8 +10,8 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Конструктор класса
     /// </summary>
-    /// <param name="id">Идентификатор раунда</param>
-    /// <param name="theme">Тема раунда</param>
+    /// <param name="id"> Идентификатор раунда </param>
+    /// <param name="theme"> Тема раунда </param>
     public RoundStartInfo(Guid id, string theme)
     {
       this.Id = id;

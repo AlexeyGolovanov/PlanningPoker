@@ -65,7 +65,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Тест работы метода, отсылаюзего клиентам обновленный список комнат
+    /// Тест работы метода, отсылающего клиентам обновленный список комнат
     /// </summary>
     [Test]
     public void UpdateRoomList()
@@ -91,7 +91,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Тест метода оповещабщего о начале раунда
+    /// Тест метода оповещающего о начале раунда
     /// </summary>
     /// <returns></returns>
     [Test]
@@ -106,7 +106,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Тест метода оповещабщего о завершении раунда
+    /// Тест метода оповещающего о завершении раунда
     /// </summary>
     /// <returns></returns>
     [Test]

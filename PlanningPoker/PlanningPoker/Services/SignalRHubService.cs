@@ -19,7 +19,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса взамодействия с хабом SignalR
     /// </summary>
-    /// <param name="context">Абстракция для хаба SignalR</param>
+    /// <param name="context"> Абстракция для хаба SignalR </param>
     public SignalRHubService(IHubContext<SignalRHub> context)
     {
       this.context = context;
@@ -28,8 +28,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Обновление списка комнат
     /// </summary>
-    /// <param name="rooms">Список комнат</param>
-    /// <returns>Без возвращаемого значения</returns>
+    /// <param name="rooms"> Список комнат </param>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task UpdateRoomList(IEnumerable<Room> rooms)
     {
       await this.context.Clients.All.SendAsync("UpdateRoomList", rooms);
@@ -38,8 +38,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Обговление списка пользователей
     /// </summary>
-    /// <param name="users">Список пользователей</param>
-    /// <returns>Без возвращаемого значения</returns>
+    /// <param name="users"> Список пользователей </param>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task UpdateUserList(IEnumerable<User> users)
     {
       foreach (var user in users)
@@ -51,9 +51,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Информация о начале раунда
     /// </summary>
-    /// <param name="users">Список пользователей</param>
-    /// <param name="round">Рассматриваемый раунд</param>
-    /// <returns>Без возвращаемого значения</returns>
+    /// <param name="users"> Список пользователей </param>
+    /// <param name="round"> Рассматриваемый раунд </param>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task RoundStart(IEnumerable<User> users, Round round)
     {
       foreach (var user in users)
@@ -65,9 +65,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Информация озавршении раунда
     /// </summary>
-    /// <param name="users">Список пользователей</param>
-    /// <param name="round">Рассматриваемый раунд</param>
-    /// <returns>Без возвращаемого значения</returns>
+    /// <param name="users"> Список пользователей </param>
+    /// <param name="round"> Рассматриваемый раунд </param>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task RoundStop(IEnumerable<User> users, Round round)
     {
       foreach (var user in users)

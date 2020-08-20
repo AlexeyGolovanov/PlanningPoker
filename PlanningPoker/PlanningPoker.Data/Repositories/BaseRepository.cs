@@ -19,7 +19,7 @@ namespace PlanningPoker.Data.Repositories
     /// <summary>
     /// Добавить экземпляр в коллекци.
     /// </summary>
-    /// <param name="entity">Добавляемый экземпляр</param>
+    /// <param name="entity"> Добавляемый экземпляр </param>
     public void Add(T entity)
     {
       entityList.Add(entity);
@@ -28,17 +28,17 @@ namespace PlanningPoker.Data.Repositories
     /// <summary>
     /// Удалить оюъект из коллекции
     /// </summary>
-    /// <param name="id">Идентификатор объекта</param>
+    /// <param name="id"> Идентификатор объекта </param>
     public void Remove(Guid id)
     {
       entityList.Remove(this.Get(id));
     }
 
     /// <summary>
-    /// Получить объект их коллекции
+    /// Получить объект из коллекции
     /// </summary>
-    /// <param name="id">Идентификатор объекта</param>
-    /// <returns>Найденный объект</returns>
+    /// <param name="id"> Идентификатор объекта </param>
+    /// <returns> Найденный объект </returns>
     public T Get(Guid id)
     {
       return entityList.FirstOrDefault(entity => entity.Id == id);
@@ -47,7 +47,7 @@ namespace PlanningPoker.Data.Repositories
     /// <summary>
     /// Получит всю коллекцию объектов
     /// </summary>
-    /// <returns>Полученная коллекция</returns>
+    /// <returns> Полученная коллекция </returns>
     public IEnumerable<T> GetAll()
     {
       return entityList;

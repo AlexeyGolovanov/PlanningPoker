@@ -35,12 +35,12 @@ namespace PlanningPoker.Tests
     private DeckService deckService;
 
     /// <summary>
-    /// сервис работы с комнатами
+    /// Сервис работы с комнатами
     /// </summary>
     private RoomService roomService;
 
     /// <summary>
-    /// подготовка сервисов
+    /// Подготовка сервисов
     /// </summary>
     [SetUp]
     public void InitializeServices()
@@ -116,7 +116,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Тест корректности получения списка всез комнат
+    /// Тест корректности получения списка всех комнат
     /// </summary>
     [Test]
     public void GetAllRooms()
@@ -129,7 +129,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Тест работы метода полключения пользователя к комнате
+    /// Тест работы метода подключения пользователя к комнате
     /// </summary>
     /// <returns></returns>
     [Test]

@@ -29,9 +29,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Конструктор сервиса работы с комнатами
     /// </summary>
-    /// <param name="hub">Сервис работы с хабом SignalR</param>
-    /// <param name="rooms">Репозиторий комнат</param>
-    /// <param name="users">Репозиторий пользователей</param>
+    /// <param name="hub"> Сервис работы с хабом SignalR </param>
+    /// <param name="rooms"> Репозиторий комнат </param>
+    /// <param name="users"> Репозиторий пользователей </param>
     public RoomService(ISignalRHubService hub, IRepository<Room> rooms, IRepository<User> users)
     {
       this.hub = hub;
@@ -42,9 +42,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Создание новойй комнаты
     /// </summary>
-    /// <param name="name">Название комнаты</param>
-    /// <param name="owner">Пользователь - создатель</param>
-    /// <param name="deck">Используемая по умолчанию колода</param>
+    /// <param name="name"> Название комнаты </param>
+    /// <param name="owner"> Пользователь - создатель </param>
+    /// <param name="deck"> Используемая по умолчанию колода </param>
     /// <returns></returns>
     public Room Add(string name, User owner, Deck deck)
     {
@@ -57,7 +57,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Удаление комнаты
     /// </summary>
-    /// <param name="id">Идентификатор комнаты</param>
+    /// <param name="id"> Идентификатор комнаты </param>
     public void Remove(Guid id)
     {
       this.rooms.Remove(this.Get(id).Id);
@@ -66,8 +66,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение экземпляра комнаты
     /// </summary>
-    /// <param name="id">Идентификатор комнаты</param>
-    /// <returns>Найденная комната</returns>
+    /// <param name="id"> Идентификатор комнаты </param>
+    /// <returns> Найденная комната </returns>
     public Room Get(Guid id)
     {
       return this.rooms.Get(id);
@@ -76,7 +76,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Получение списка всех комнат
     /// </summary>
-    /// <returns>Список всех комнат</returns>
+    /// <returns> Список всех комнат </returns>
     public IEnumerable<Room> GetAll()
     {
       return this.rooms.GetAll();
@@ -85,9 +85,9 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Присоединение пользователя к комнате
     /// </summary>
-    /// <param name="userId">Идентификатор пользователя</param>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <returns>Экземпляр комнаты, к которой присоединился пользователь</returns>
+    /// <param name="userId"> Идентификатор пользователя </param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
+    /// <returns> Экземпляр комнаты, к которой присоединился пользователь </returns>
     public async Task<Room> UserJoin(Guid userId, Guid roomId)
     {
       var room = this.Get(roomId);
@@ -103,8 +103,8 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Отключение пользователя от комнаты
     /// </summary>
-    /// <param name="userId">Идентификатор пользователя</param>
-    /// <param name="roomId">Идентификатор комнаты</param>
+    /// <param name="userId"> Идентификатор пользователя </param>
+    /// <param name="roomId"> Идентификатор комнаты </param>
     public void UserLeave(Guid userId, Guid roomId)
     {
       var room = this.Get(roomId);

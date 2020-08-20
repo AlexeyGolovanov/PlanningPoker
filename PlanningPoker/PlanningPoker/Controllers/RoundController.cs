@@ -27,8 +27,8 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Конструктор контроллера раундов
     /// </summary>
-    /// <param name="roundService">Сервис работы с раундами</param>
-    /// <param name="cardService">ервис работы с картами</param>
+    /// <param name="roundService"> Сервис работы с раундами </param>
+    /// <param name="cardService"> Сервис работы с картами </param>
     public RoundController(RoundService roundService, CardService cardService)
     {
       this.roundService = roundService;
@@ -38,7 +38,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Начало раунда
     /// </summary>
-    /// <param name="values">Оюект со значениями для старта раунда</param>
+    /// <param name="values"> Объект со значениями для старта раунда </param>
     [HttpPost("roundStart")]
     public async void Start(RoundCreation values)
     {
@@ -55,7 +55,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Завершение раунда
     /// </summary>
-    /// <param name="values">Обект со значениями для завершения раунда</param>
+    /// <param name="values"> Объект со значениями для завершения раунда </param>
     [HttpPost("roundStop")]
     public async void Stop(RoundFinishing values)
     {
@@ -65,7 +65,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Получение всех раундов
     /// </summary>
-    /// <returns>Список всех раундов</returns>
+    /// <returns> Список всех раундов </returns>
     [HttpGet("getAll")]
     public IEnumerable<Round> GetAll()
     {
@@ -75,7 +75,7 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Переигрывание раунда
     /// </summary>
-    /// <param name="values">Объект со значениями для переигровки раунда</param>
+    /// <param name="values"> Объект со значениями для переигровки раунда </param>
     [HttpPost("roundRestart")]
     public async void Restart(UserConnection values)
     {
@@ -85,8 +85,8 @@ namespace PlanningPoker.Controllers
     /// <summary>
     /// Выбор карты
     /// </summary>
-    /// <param name="values">Оюхект со значеними для выбора карты пользователем</param>
-    /// <returns>Документируемый объект сделанного выбора</returns>
+    /// <param name="values"> Объект со значеними для выбора карты пользователем </param>
+    /// <returns> Документируемый объект сделанного выбора </returns>
     [HttpPost("vote")]
     public Vote Vote(Voting values)
     { 

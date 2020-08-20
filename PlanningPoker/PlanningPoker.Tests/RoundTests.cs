@@ -11,7 +11,7 @@ using PlanningPoker.Services;
 namespace PlanningPoker.Tests
 {
   /// <summary>
-  /// Класс содержащий тесты для сервиса работы с раундами
+  /// Класс, содержащий тесты для сервиса работы с раундами
   /// </summary>
   public class RoundTests
   {
@@ -271,7 +271,7 @@ namespace PlanningPoker.Tests
     }
 
     /// <summary>
-    /// Метод создабщий тестовую колоду
+    /// Метод создающий тестовую колоду
     /// </summary>
     public void CreateDeck()
     {

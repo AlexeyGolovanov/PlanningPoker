@@ -11,7 +11,7 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Конструктор колоды
     /// </summary>
-    /// <param name="name">Название колоды</param>
+    /// <param name="name"> Название колоды </param>
     public Deck(string name)
     {
       this.Id = Guid.NewGuid();

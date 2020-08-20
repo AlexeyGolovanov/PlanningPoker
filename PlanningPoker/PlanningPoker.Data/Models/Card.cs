@@ -10,8 +10,8 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Конструктор карты
     /// </summary>
-    /// <param name="text">Текст карты</param>
-    /// <param name="value">Численное значение карты</param>
+    /// <param name="text"> Текст карты </param>
+    /// <param name="value"> Численное значение карты </param>
     public Card(string text, double? value)
     {
       this.Id = Guid.NewGuid();
@@ -32,6 +32,6 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Численное значение карты
     /// </summary>
-    public double? Value { get;}
+    public double? Value { get; }
   }
 }

@@ -3,7 +3,7 @@
 namespace PlanningPoker.Data.DTOs
 {
   /// <summary>
-  /// Класс созначениями для создания пользователя
+  /// Класс со значениями для создания пользователя
   /// </summary>
   public class UserCreation
   {
