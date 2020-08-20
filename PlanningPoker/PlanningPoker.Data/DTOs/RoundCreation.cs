@@ -12,7 +12,7 @@ namespace PlanningPoker.Data.DTOs
     /// </summary>
     /// <param name="roomId">Идентификатор комнаты</param>
     /// <param name="theme">Тема раунда</param>
-    /// <param name="plannedDuration">Ожидаемая длительность</param>
+    /// <param name="plannedDuration">Ожидаемая длительность в милисекундах</param>
     /// <param name="deckId">Идентификатор колоды</param>
     public RoundCreation(Guid roomId, string theme, int? plannedDuration, Guid? deckId = null)
     {
@@ -38,7 +38,7 @@ namespace PlanningPoker.Data.DTOs
     public Guid? DeckId { get; }
 
     /// <summary>
-    /// Ожидаемая длительность
+    /// Ожидаемая длительность в милисекундах
     /// </summary>
     public int? PlannedDuration { get; }
   }
