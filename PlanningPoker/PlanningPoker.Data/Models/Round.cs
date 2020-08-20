@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using PlanningPoker.Data.DTOs;
+using System.Linq;
 
 namespace PlanningPoker.Data.Models
 {
@@ -73,23 +73,14 @@ namespace PlanningPoker.Data.Models
     /// <returns>Среднее значение голоса</returns>
     private double? GetAverage()
     {
-      double sum = 0;
-      var amount = 0;
-      foreach (var vote in this.Votes)
-      {
-        if (vote.Card?.Value != null)
-        {
-          sum += (double)vote.Card.Value;
-          amount++;
-        }
-      }
+      var nonNullCardValues = this.Votes.Select(vote => vote.Card?.Value != null).OfType<Vote>().ToList();
 
-      if (amount == 0)
+      if (!nonNullCardValues.Any())
       {
         return null;
       }
 
-      return sum / amount;
+      return nonNullCardValues.Average(vote => vote.Card?.Value);
     }
   }
 }
