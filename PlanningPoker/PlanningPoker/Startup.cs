@@ -1,14 +1,13 @@
-using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using PlanningPoker.Data.Models;
 using PlanningPoker.Data.Repositories;
 using PlanningPoker.Services;
+using System.Linq;
 
 namespace PlanningPoker
 {

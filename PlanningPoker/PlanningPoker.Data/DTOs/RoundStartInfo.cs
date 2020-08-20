@@ -21,11 +21,11 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Идентификатор раунда
     /// </summary>
-    public Guid Id { get; }
+    public Guid Id { get; set; }
 
     /// <summary>
     /// Тема раунда
     /// </summary>
-    public string Theme { get; }
+    public string Theme { get; set; }
   }
 }

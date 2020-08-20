@@ -51,7 +51,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("create")]
     public CreatedRoom AddRoom(RoomCreation values)
     {
-      var createdRoom = roomService.Add(values.RoomName, userService.Get(values.UserId), deckService.Get(values.DeckId));
+      var createdRoom = roomService.Add(values.RoomName, this.userService.Get(values.UserId), this.deckService.Get(values.DeckId));
       return new CreatedRoom(createdRoom.Id, createdRoom.Name);
     }
 
@@ -63,7 +63,7 @@ namespace PlanningPoker.Controllers
     [HttpGet("get/{id}")]
     public Room GetRoom(Guid id)
     {
-      return roomService.Get(id);
+      return this.roomService.Get(id);
     }
 
     /// <summary>
@@ -73,7 +73,7 @@ namespace PlanningPoker.Controllers
     [HttpGet("getAll")]
     public IEnumerable<Room> GetAllRoom()
     {
-      return roomService.GetAll();
+      return this.roomService.GetAll();
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("UserJoin")]
     public async Task<Room> JoinUser(UserConnection values)
     {
-      return await roomService.UserJoin(values.UserId, values.RoomId);
+      return await this.roomService.UserJoin(values.UserId, values.RoomId);
     }
   }
 }

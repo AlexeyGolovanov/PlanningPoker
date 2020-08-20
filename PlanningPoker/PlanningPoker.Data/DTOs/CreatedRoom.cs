@@ -21,11 +21,11 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Идентификатор комнаты
     /// </summary>
-    public Guid Id { get; }
+    public Guid Id { get; set; }
 
     /// <summary>
     /// Название комнаты
     /// </summary>
-    public string Name { get; }
+    public string Name { get; set; }
   }
 }

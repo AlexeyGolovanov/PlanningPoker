@@ -24,12 +24,12 @@ namespace PlanningPoker.Services
     /// <returns>Объект с информацией для таймера</returns>
     public RoundTimerInfo Start(Guid roomId, Guid roundId, Timer timer)
     {
-      if (timers.TryAdd(roundId, new RoundTimerInfo(roomId, timer)))
+      if (this.timers.TryAdd(roundId, new RoundTimerInfo(roomId, timer)))
       {
-        timers[roundId].Timer.Start();
+        this.timers[roundId].Timer.Start();
       }
 
-      return timers[roundId];
+      return this.timers[roundId];
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ namespace PlanningPoker.Services
     /// <returns>Был ли остановлен таймер</returns>
     public bool Stop(Guid roundId)
     {
-      if (timers.TryRemove(roundId, out var value))
+      if (this.timers.TryRemove(roundId, out var value))
       {
         value.Timer.Stop();
         value.Timer.Dispose();

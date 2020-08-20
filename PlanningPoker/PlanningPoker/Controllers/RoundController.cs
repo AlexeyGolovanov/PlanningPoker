@@ -59,7 +59,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("roundStop")]
     public async void Stop(RoundFinishing values)
     {
-      await roundService.Stop(values.RoomId);
+      await this.roundService.Stop(values.RoomId);
     }
 
     /// <summary>
@@ -79,7 +79,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("roundRestart")]
     public async void Restart(UserConnection values)
     {
-      await roundService.Restart(values.RoomId);
+      await this.roundService.Restart(values.RoomId);
     }
 
     /// <summary>
@@ -90,7 +90,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("vote")]
     public Vote Vote(Voting values)
     { 
-      return roundService.Vote(values.RoundId, values.UserId, cardService.Get(values.CardId));
+      return this.roundService.Vote(values.RoundId, values.UserId, cardService.Get(values.CardId));
     }
   }
 }

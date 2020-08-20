@@ -27,21 +27,21 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Идентификатор раунда
     /// </summary>
-    public Guid Id { get; }
+    public Guid Id { get; set; }
 
     /// <summary>
     /// Тема раунда
     /// </summary>
-    public string Theme { get; }
+    public string Theme { get; set; }
 
     /// <summary>
     /// Список голосов
     /// </summary>
-    public IEnumerable<Vote> Votes { get; }
+    public IEnumerable<Vote> Votes { get; set; }
 
     /// <summary>
     /// Среднее значение голосов
     /// </summary>
-    public double? AverageValue { get; }
+    public double? AverageValue { get; set; }
   }
 }

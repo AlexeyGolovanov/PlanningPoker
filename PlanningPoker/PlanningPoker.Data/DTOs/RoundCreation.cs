@@ -25,21 +25,21 @@ namespace PlanningPoker.Data.DTOs
     /// <summary>
     /// Идентификатор комнаты
     /// </summary>
-    public Guid RoomId { get; }
+    public Guid RoomId { get; set; }
 
     /// <summary>
     /// Тема раунда
     /// </summary>
-    public string Theme { get; }
+    public string Theme { get; set; }
 
     /// <summary>
     /// Идентификатор колоды
     /// </summary>
-    public Guid? DeckId { get; }
+    public Guid? DeckId { get; set; }
 
     /// <summary>
     /// Ожидаемая длительность в милисекундах
     /// </summary>
-    public int? PlannedDuration { get; }
+    public int? PlannedDuration { get; set; }
   }
 }

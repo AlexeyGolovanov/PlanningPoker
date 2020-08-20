@@ -37,7 +37,7 @@ namespace PlanningPoker.Controllers
     [HttpPost("createUser")]
     public User CreateUser(UserCreation values)
     {
-      if (userService.GetAll().FirstOrDefault(user => user.Id == values.UserId) != null)
+      if (this.userService.GetAll().FirstOrDefault(user => user.Id == values.UserId) != null)
       {
         if (values.UserId != null)
         {
@@ -45,7 +45,7 @@ namespace PlanningPoker.Controllers
         }
       }
 
-      return userService.Add(values.UserName, values.ConnectionId);
+      return this.userService.Add(values.UserName, values.ConnectionId);
     }
 
     /// <summary>
@@ -56,7 +56,7 @@ namespace PlanningPoker.Controllers
     [HttpGet("get/{id}")]
     public User GetUser(string id)
     {
-      return userService.Get(new Guid(id));
+      return this.userService.Get(new Guid(id));
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ namespace PlanningPoker.Controllers
     [HttpGet("get/{id}")]
     public User GetUser(Guid id)
     {
-      return userService.Get(id);
+      return this.userService.Get(id);
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace PlanningPoker.Controllers
     [HttpGet("getAll")]
     public IEnumerable<User> GetAll()
     {
-      return userService.GetAll();
+      return this.userService.GetAll();
     }
   }
 }
