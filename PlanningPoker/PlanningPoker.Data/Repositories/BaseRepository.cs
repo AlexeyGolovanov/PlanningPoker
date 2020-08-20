@@ -14,7 +14,7 @@ namespace PlanningPoker.Data.Repositories
     /// <summary>
     /// Коллекция хранимых сущностей
     /// </summary>
-    private static readonly ICollection<T> EntityList = new List<T>();
+    private static readonly ICollection<T> entityList = new List<T>();
 
     /// <summary>
     /// Добавить экземпляр в коллекци.
@@ -22,7 +22,7 @@ namespace PlanningPoker.Data.Repositories
     /// <param name="entity">Добавляемый экземпляр</param>
     public void Add(T entity)
     {
-      EntityList.Add(entity);
+      entityList.Add(entity);
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ namespace PlanningPoker.Data.Repositories
     /// <param name="id">Идентификатор объекта</param>
     public void Remove(Guid id)
     {
-      EntityList.Remove(this.Get(id));
+      entityList.Remove(this.Get(id));
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace PlanningPoker.Data.Repositories
     /// <returns>Найденный объект</returns>
     public T Get(Guid id)
     {
-      return EntityList.FirstOrDefault(entity => entity.Id == id);
+      return entityList.FirstOrDefault(entity => entity.Id == id);
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ namespace PlanningPoker.Data.Repositories
     /// <returns>Полученная коллекция</returns>
     public IEnumerable<T> GetAll()
     {
-      return EntityList;
+      return entityList;
     }
 
     /// <summary>
@@ -58,7 +58,7 @@ namespace PlanningPoker.Data.Repositories
     /// </summary>
     public void Clear()
     {
-      EntityList.Clear();
+      entityList.Clear();
     }
   }
 }
