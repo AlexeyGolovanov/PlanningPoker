@@ -46,7 +46,7 @@ namespace PlanningPoker
     /// <summary>
     /// Обновление списка комнат
     /// </summary>
-    /// <returns>без возвращаемого значения</returns>
+    /// <returns> Без возвращаемого значения</returns>
     public async Task UpdateRoomList()
     {
       await this.hubService.UpdateRoomList(roomService.GetAll());
@@ -55,7 +55,7 @@ namespace PlanningPoker
     /// <summary>
     /// Обновление списка пользователей
     /// </summary>
-    /// <returns>без возвращаемого значения </returns>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task UpdateUserList()
     {
       await this.hubService.UpdateUserList(userService.GetAll());
@@ -64,7 +64,7 @@ namespace PlanningPoker
     /// <summary>
     /// Обновить список колод
     /// </summary>
-    /// <returns>без возвращаемого значения</returns>
+    /// <returns> Без возвращаемого значения </returns>
     public async Task SendDecks()
     {
       await this.Clients.Caller.SendAsync("SendDecks", deckService.GetAll());
@@ -73,8 +73,8 @@ namespace PlanningPoker
     /// <summary>
     /// Метод вызываемый при отключении пользователя
     /// </summary>
-    /// <param name="exception">возникабщая ошибка</param>
-    /// <returns>без возвразаемого значения</returns>
+    /// <param name="exception"> Возникающая ошибка </param>
+    /// <returns> Без возвразаемого значения </returns>
     public override async Task OnDisconnectedAsync(Exception exception)
     {
       var rooms = roomService.GetAll();
