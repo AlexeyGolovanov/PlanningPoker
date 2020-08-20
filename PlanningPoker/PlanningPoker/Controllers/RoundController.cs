@@ -49,7 +49,7 @@ namespace PlanningPoker.Controllers
         time = TimeSpan.FromMilliseconds(values.PlannedDuration.Value);
       }
 
-      var currentRound = await this.roundService.Add(values.Theme, values.RoomId, time, values.DeckId);
+      await this.roundService.Add(values.Theme, values.RoomId, time, values.DeckId);
     }
 
     /// <summary>
@@ -77,9 +77,9 @@ namespace PlanningPoker.Controllers
     /// </summary>
     /// <param name="values"> Объект со значениями для переигровки раунда </param>
     [HttpPost("roundRestart")]
-    public async void Restart(UserConnection values)
+    public async void Restart(Guid roomId)
     {
-      await this.roundService.Restart(values.RoomId);
+      await this.roundService.Restart(roomId);
     }
 
     /// <summary>
