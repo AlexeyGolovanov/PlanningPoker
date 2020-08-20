@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using PlanningPoker.Data.Models;
 
 namespace PlanningPoker.Data.DTOs
 {
