@@ -32,17 +32,17 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Название комнаты
     /// </summary>
-    public string Name { get; set; }
+    public string Name { get;}
 
     /// <summary>
     /// Владелец комнаты
     /// </summary>
-    public User Owner { get; set; }
+    public User Owner { get;}
 
     /// <summary>
     /// Список пользователей в комнате
     /// </summary>
-    public ICollection<User> Users { get; set; }
+    public ICollection<User> Users { get; }
 
     /// <summary>
     /// Используемая колода
@@ -52,7 +52,7 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Список прошедгих раундов
     /// </summary>
-    public ICollection<Round> Rounds { get; set; }
+    public ICollection<Round> Rounds { get; }
 
     /// <summary>
     /// Активный в данный момент раунд

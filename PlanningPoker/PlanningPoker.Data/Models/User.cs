@@ -22,7 +22,7 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Идентификатор пользователя
     /// </summary>
-    public Guid Id { get; set; }
+    public Guid Id { get; }
 
     /// <summary>
     /// Имя пользователя

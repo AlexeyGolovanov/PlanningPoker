@@ -40,7 +40,7 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Время начала раунда
     /// </summary>
-    public DateTime StartTime { get;  }
+    public DateTime StartTime { get; }
 
     /// <summary>
     /// Время заверщения раугда

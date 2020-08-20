@@ -27,11 +27,11 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Текст карты
     /// </summary>
-    public string Text { get; set; }
+    public string Text { get; }
 
     /// <summary>
     /// Численное значение карты
     /// </summary>
-    public double? Value { get; set; }
+    public double? Value { get;}
   }
 }
