@@ -13,7 +13,7 @@ namespace PlanningPoker.Services
     /// <summary>
     /// Словарь содержащий в качестве ключа идентификатор раунда, а в значении информацию для таймера
     /// </summary>
-    private static readonly ConcurrentDictionary<Guid, RoundTimerInfo> Timers = new ConcurrentDictionary<Guid, RoundTimerInfo>();
+    private readonly ConcurrentDictionary<Guid, RoundTimerInfo> timers = new ConcurrentDictionary<Guid, RoundTimerInfo>();
 
     /// <summary>
     /// Запуск таймера
@@ -24,12 +24,12 @@ namespace PlanningPoker.Services
     /// <returns>Объект с информацией для таймера</returns>
     public RoundTimerInfo Start(Guid roomId, Guid roundId, Timer timer)
     {
-      if (Timers.TryAdd(roundId, new RoundTimerInfo(roomId, timer)))
+      if (timers.TryAdd(roundId, new RoundTimerInfo(roomId, timer)))
       {
-        Timers[roundId].Timer.Start();
+        timers[roundId].Timer.Start();
       }
 
-      return Timers[roundId];
+      return timers[roundId];
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ namespace PlanningPoker.Services
     /// <returns>Был ли остановлен таймер</returns>
     public bool Stop(Guid roundId)
     {
-      if (Timers.TryRemove(roundId, out var value))
+      if (timers.TryRemove(roundId, out var value))
       {
         value.Timer.Stop();
         value.Timer.Dispose();

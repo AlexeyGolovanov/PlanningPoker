@@ -52,13 +52,5 @@ namespace PlanningPoker.Data.Repositories
     {
       return entityList;
     }
-
-    /// <summary>
-    /// Очистить коллекцию
-    /// </summary>
-    public void Clear()
-    {
-      entityList.Clear();
-    }
   }
 }

@@ -33,10 +33,5 @@ namespace PlanningPoker.Data.Repositories
     /// </summary>
     /// <returns>Полученная коллекция</returns>
     IEnumerable<T> GetAll();
-
-    /// <summary>
-    /// Очистить коллекцию
-    /// </summary>
-    void Clear();
   }
 }
