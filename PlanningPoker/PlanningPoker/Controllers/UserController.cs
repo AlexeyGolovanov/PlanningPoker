@@ -60,6 +60,17 @@ namespace PlanningPoker.Controllers
     }
 
     /// <summary>
+    /// Получение пользователя
+    /// </summary>
+    /// <param name="id">Идентификатор пользователя</param>
+    /// <returns>Найденный пользователь</returns>
+    [HttpGet("get/{id}")]
+    public User GetUser(Guid id)
+    {
+      return userService.Get(id);
+    }
+
+    /// <summary>
     /// получение списка всех пользователей
     /// </summary>
     /// <returns>Список всех пользователей</returns>
