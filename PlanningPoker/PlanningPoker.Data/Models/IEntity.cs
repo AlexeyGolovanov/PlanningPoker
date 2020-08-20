@@ -7,6 +7,6 @@ namespace PlanningPoker.Data.Models
   /// </summary>
   public interface IEntity
   {
-    Guid Id { get; }
+    public Guid Id { get; }
   }
 }

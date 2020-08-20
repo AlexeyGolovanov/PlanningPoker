@@ -31,9 +31,10 @@ namespace PlanningPoker
     /// <summary>
     /// Конструктор класса SignalR хаба
     /// </summary>
-    /// <param name="roomService">Сервис работы с комнатами</param>
-    /// <param name="deckService">Сервис работы с колодами</param>
-    /// <param name="hubService">Сервис работы с хабом SignalR</param>
+    /// <param name="userService"> Сервис работы с пользователями </param>
+    /// <param name="roomService"> Сервис работы с комнатами </param>
+    /// <param name="deckService"> Сервис работы с колодами </param>
+    /// <param name="hubService"> Сервис работы с хабом SignalR </param>
     public SignalRHub(UserService userService, RoomService roomService, DeckService deckService, ISignalRHubService hubService)
     {
       this.hubService = hubService;
