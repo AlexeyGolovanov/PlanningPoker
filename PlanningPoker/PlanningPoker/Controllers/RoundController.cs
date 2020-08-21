@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PlanningPoker.Data.DTOs;
 using PlanningPoker.Data.Models;
@@ -40,7 +41,7 @@ namespace PlanningPoker.Controllers
     /// </summary>
     /// <param name="values"> Объект со значениями для старта раунда </param>
     [HttpPost("roundStart")]
-    public async void Start(RoundCreation values)
+    public async Task Start(RoundCreation values)
     {
       TimeSpan? time = null;
 
@@ -57,7 +58,7 @@ namespace PlanningPoker.Controllers
     /// </summary>
     /// <param name="values"> Объект со значениями для завершения раунда </param>
     [HttpPost("roundStop")]
-    public async void Stop(RoundFinishing values)
+    public async Task Stop(RoundFinishing values)
     {
       await this.roundService.Stop(values.RoomId);
     }
@@ -77,7 +78,7 @@ namespace PlanningPoker.Controllers
     /// </summary>
     /// <param name="values"> Объект со значениями для переигровки раунда </param>
     [HttpPost("roundRestart")]
-    public async void Restart(Guid roomId)
+    public async Task Restart(Guid roomId)
     {
       await this.roundService.Restart(roomId);
     }
