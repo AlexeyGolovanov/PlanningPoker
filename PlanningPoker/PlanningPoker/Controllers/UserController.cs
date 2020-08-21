@@ -53,18 +53,7 @@ namespace PlanningPoker.Controllers
     /// </summary>
     /// <param name="id"> Идентификатор пользователя </param>
     /// <returns> Найденный пользователь </returns>
-    [HttpGet("getByString/{id}")]
-    public User GetUser(string id)
-    {
-      return this.userService.Get(new Guid(id));
-    }
-
-    /// <summary>
-    /// Получение пользователя
-    /// </summary>
-    /// <param name="id"> Идентификатор пользователя </param>
-    /// <returns> Найденный пользователь </returns>
-    [HttpGet("getByGuid/{id}")]
+    [HttpGet("getUser/{id}")]
     public User GetUser(Guid id)
     {
       return this.userService.Get(id);
