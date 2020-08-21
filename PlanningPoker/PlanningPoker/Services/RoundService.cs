@@ -91,7 +91,7 @@ namespace PlanningPoker.Services
       {
         room.ActiveRound.PlannedDuration = time;
 
-        Timer timer = new Timer(time.Value.TotalMilliseconds);
+        var timer = new Timer(time.Value.TotalMilliseconds);
 
         timer.Elapsed += async (o, e) =>
         {
