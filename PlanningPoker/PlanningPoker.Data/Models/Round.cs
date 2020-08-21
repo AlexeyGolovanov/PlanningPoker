@@ -60,27 +60,11 @@ namespace PlanningPoker.Data.Models
     /// <summary>
     /// Среднее значение голосов
     /// </summary>
-    public double? AverageValue => this.GetAverage();
+    public double? AverageValue => Votes.Average(vote => vote.Card?.Value);
 
     /// <summary>
     /// Активен или заверешен раунд
     /// </summary>
     public bool IsActive { get; set; }
-
-    /// <summary>
-    /// Метод подсчета среднего значения голоса
-    /// </summary>
-    /// <returns> Среднее значение голоса </returns>
-    private double? GetAverage()
-    {
-      var nonNullCardValues = this.Votes.Select(vote => vote.Card?.Value != null).OfType<Vote>().ToList();
-
-      if (!nonNullCardValues.Any())
-      {
-        return null;
-      }
-
-      return nonNullCardValues.Average(vote => vote.Card?.Value);
-    }
   }
 }
