@@ -82,9 +82,9 @@ namespace PlanningPoker.Services
 
       room.ActiveRound = round;
 
-      if (deckId != null)
+      if (deckId.HasValue)
       {
-        room.Deck = this.decks.Get((Guid)deckId);
+        room.Deck = this.decks.Get(deckId.Value);
       }
 
       if (time.HasValue)
