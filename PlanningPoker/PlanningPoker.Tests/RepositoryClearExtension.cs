@@ -18,11 +18,9 @@ namespace PlanningPoker.Tests
     {
       var allEntities = repository.GetAll().ToList();
 
-      var amount = allEntities.Count;
-
-      for (var i = 0; i < amount; i++)
+      foreach (var entity in allEntities)
       {
-        repository.Remove(allEntities[0].Id);
+        repository.Remove(entity.Id);
       }
     }
   }
